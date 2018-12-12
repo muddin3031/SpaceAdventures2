@@ -1,18 +1,19 @@
 package Game;
 import Rocket.Ship;
-import Rooms.Room;
-import Rooms.HomePlanet;
-import Rooms.Jupiter;
-import Rooms.Saturn;
-import Rooms.Neptune;
-import Rooms.Uranus;
-import Rooms.Venus;
+import Rooms.*;
+import Board.Board;
+//import Rooms.Jupiter;
+//import Rooms.Saturn;
+//import Rooms.Neptune;
+//import Rooms.Uranus;
+//import Rooms.Venus;
 
 import java.util.Scanner;
 
 public class Runner {
 
     private static boolean gameOn = true;
+    private static Board Board = new Board(5,5);
 
     public static void main(String[] args)
     {
@@ -29,6 +30,11 @@ public class Runner {
         int x = (int)(Math.random()*space.length);
         int y = (int)(Math.random()*space.length);
         space[x][y] = new HomePlanet(x,y);
+        space[x][y] = new Jupiter(x,y);
+        space[x][y] = new Venus(x,y);
+        space[x][y] = new Neptune(x,y);
+        space[x][y] = new Saturn(x,y);
+        space[x][y] = new Uranus(x,y);
 
 
         Ship ship1 = new Ship("RocketName", 0,0);
@@ -37,6 +43,7 @@ public class Runner {
 
         while(gameOn)
         {
+            Board.printBoard(space[x][y]);
             Room.PlanetSwitch(space, ship1);
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
@@ -52,6 +59,7 @@ public class Runner {
 
         }
         in.close();
+
     }
 
 

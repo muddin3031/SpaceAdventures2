@@ -14,6 +14,8 @@ public class Jupiter extends Room {
     }
 
     public void leaveRoom(Ship x){
+
         apollo13 = null;
+        private static
     }
 }
