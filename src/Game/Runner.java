@@ -7,6 +7,7 @@ import Rooms.Saturn;
 import Rooms.Neptune;
 import Rooms.Uranus;
 import Rooms.Venus;
+import Board.Board;
 
 import java.util.Scanner;
 
@@ -43,7 +44,7 @@ public class Runner {
         while(gameOn)
         {
             Room.PlanetSwitch(space, ship1);
-	    Board.printBoard();
+	    board1.printBoard();
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
             if(validMove(move, ship1, space))
