@@ -7,7 +7,7 @@ public class Uranus extends Room {
     }
 
     public void enterRoom(Ship x){
-        System.out.println("Ha Ha Ha its Uranus");
+        System.out.println("Ha Ha Ha it's Uranus");
         apollo13 = x;
         x.setxPos(this.xPos);
         x.setyPos(this.yPos);

@@ -7,19 +7,22 @@ import Rooms.Saturn;
 import Rooms.Neptune;
 import Rooms.Uranus;
 import Rooms.Venus;
+import Board.Board;
 
 import java.util.Scanner;
+
+
 
 public class Runner {
 
     private static boolean gameOn = true;
+    private static Board Board = new Board(5,5);
 
     public static void main(String[] args)
     {
 	// write your code here
 
         Room[][] space = new Room[5][5];
-
         for (int x = 0; x < space.length; x++){
             for(int y = 0; y <space[x].length; y++){
                 space[x][y] = new Room(x,y);
@@ -37,8 +40,11 @@ public class Runner {
 
         while(gameOn)
         {
+            Board.printBoard();
             Room.PlanetSwitch(space, ship1);
+
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
+
             String move = in.nextLine();
             if(validMove(move, ship1, space))
             {
@@ -52,6 +58,7 @@ public class Runner {
 
         }
         in.close();
+
     }
 
 
