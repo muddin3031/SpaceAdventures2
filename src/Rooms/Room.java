@@ -35,14 +35,6 @@ public class Room {
     public static void PlanetSwitch(Room[][] space, Ship ship1) {
         int r = ship1.getxPos();
         int c = ship1.getyPos();
-        int x = (int)(Math.random()*space.length);
-        int y = (int)(Math.random()*space.length);
-        space[x][y] = new HomePlanet(x,y);
-        space[x][y] = new Jupiter(x,y);
-        space[x][y] = new Saturn(x,y);
-        space[x][y] = new Neptune(x,y);
-        space[x][y] = new Uranus(x,y);
-        space[x][y] = new Venus(x,y);
 
         if (ship1.getyPos() == 0){
             space[r][c] = new Jupiter(r, c);

@@ -3,7 +3,7 @@ import Rooms.Room;
 
 
 public class Board {
-    Room[][] space;
+    public Room[][] space;
 
 
     public Board(Room[][] space) {
@@ -11,7 +11,7 @@ public class Board {
     }
 
     public Board(int height, int width) {
-        space = new Room[height][width];
+        this.space = new Room[height][width];
     }
 
     public void addRoom(Room room, int row, int col) {

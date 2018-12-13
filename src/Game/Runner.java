@@ -14,32 +14,49 @@ import java.util.Scanner;
 public class Runner {
 
     private static boolean gameOn = true;
-    private static Board board = new Board(5,5);
-
     public static void main(String[] args)
     {
 	// write your code here
 
-        Room[][] space = new Room[5][5];
+//        Room[][] board.space = new Room[5][5];
+//
+//        for (int x = 0; x < board.space.length; x++){
+//            for(int y = 0; y <board.space[x].length; y++){
+//                board.space[x][y] = new Room(x,y);
+//            }
+//        }
 
-        for (int x = 0; x < space.length; x++){
-            for(int y = 0; y <space[x].length; y++){
-                space[x][y] = new Room(x,y);
+
+        Board board = new Board(5,5);
+        int r = (int)(Math.random()* board.space.length);
+        int c = (int)(Math.random()* board.space.length);
+
+        for (int x = 0; x < board.space.length; x++) {
+            for (int y = 0; y < board.space[x].length; y++) {
+                board.space[x][y] = new Room(x, y);
             }
         }
+        board.addRoom(new HomePlanet(r,c),r ,c);
+        board.addRoom(new Jupiter(r,c),r ,c);
+        board.addRoom(new Venus(r,c),r ,c);
+        board.addRoom(new Neptune(r,c),r ,c);
+        board.addRoom(new Saturn(r,c),r ,c);
+        board.addRoom(new Saturn(r,c),r ,c);
+
+
 
 
         Ship ship1 = new Ship("RocketName", 0,0);
-        space[0][0].enterRoom((ship1));
+        board.space[0][0].enterRoom((ship1));
         Scanner in = new Scanner(System.in);
 
         while(gameOn)
         {
-            Room.PlanetSwitch(space, ship1);
+            Room.PlanetSwitch(board.space, ship1);
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             board.printBoard();
             String move = in.nextLine();
-            if(validMove(move, ship1, space))
+            if(validMove(move, ship1, board.space))
             {
                 System.out.println("Your coordinates: row = " + ship1.getxPos() + " col = " + ship1.getyPos());
             }
