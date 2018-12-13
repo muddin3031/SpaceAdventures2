@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Runner {
 
     private static boolean gameOn = true;
-    private static Board board1 = new Board[5][5];
+    private static Board board = new Board(5,5);
 
     public static void main(String[] args)
     {
@@ -28,14 +28,6 @@ public class Runner {
             }
         }
 
-        int x = (int)(Math.random()*space.length);
-        int y = (int)(Math.random()*space.length);
-        space[x][y] = new HomePlanet(x,y);
-	space[x][y] = new Jupiter(x,y);
-	space[x][y] = new Saturn(x,y);
-	space[x][y] = new Neptune(x,y);
-	space[x][y] = new Uranus(x,y);
-	space[x][y] = new Venus(x,y);
 
         Ship ship1 = new Ship("RocketName", 0,0);
         space[0][0].enterRoom((ship1));
@@ -44,19 +36,16 @@ public class Runner {
         while(gameOn)
         {
             Room.PlanetSwitch(space, ship1);
-	    board1.printBoard();
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
+            board.printBoard();
             String move = in.nextLine();
             if(validMove(move, ship1, space))
             {
-
                 System.out.println("Your coordinates: row = " + ship1.getxPos() + " col = " + ship1.getyPos());
-
             }
             else {
                 System.out.println("Please choose a valid move.");
             }
-
         }
         in.close();
     }
