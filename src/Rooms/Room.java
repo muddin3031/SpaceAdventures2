@@ -21,6 +21,15 @@ public class Room {
         apollo13 = null;
     }
 
+    @Override
+    public String toString(){
+        if (apollo13 != null){
+            return "X";
+        }
+        else{
+            return "";
+        }
+    }
 
 
     public static void PlanetSwitch(Room[][] space, Ship ship1) {

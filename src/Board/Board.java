@@ -18,7 +18,6 @@ public class Board {
         space[row][col] = room;
     }
 
-
     public void printBoard()
     {
         for (Room[] i : space) {
