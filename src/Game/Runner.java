@@ -8,7 +8,7 @@ import Rooms.Neptune;
 import Rooms.Uranus;
 import Rooms.Venus;
 import Board.Board;
-
+import Rooms.Burger;
 import java.util.Scanner;
 
 public class Runner {
@@ -26,11 +26,14 @@ public class Runner {
 //            }
 //        }
 
-
         Board board = new Board(5,5);
         int r = (int)(Math.random()* board.space.length);
         int c = (int)(Math.random()* board.space.length);
-
+        Burger burger1 = new Burger("cheeseburger",2,3);
+        Burger burger2 = new Burger("hamburger", 3,4);
+        Burger burger3 = new Burger("exotic burger", 2, 2);
+        Burger burger4 = new Burger("Big Mac", 1, 3);
+        Burger burger5= new Burger("whopper", 2,1);
         for (int x = 0; x < board.space.length; x++) {
             for (int y = 0; y < board.space[x].length; y++) {
                 board.space[x][y] = new Room(x, y);
