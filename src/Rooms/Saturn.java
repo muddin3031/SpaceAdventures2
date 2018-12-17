@@ -7,6 +7,7 @@ public class Saturn extends Room {
     }
 
     public void enterRoom(Ship x){
+
         System.out.println("The beauty of saturn awes you as you pass it.");
         apollo13 = x;
         x.setxPos(this.xPos);

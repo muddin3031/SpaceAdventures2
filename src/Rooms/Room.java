@@ -1,6 +1,6 @@
 package Rooms;
 import Rocket.Ship;
-
+import Rooms.Burger;
 public class Room {
     Ship apollo13;
     int xPos, yPos;
@@ -10,8 +10,11 @@ public class Room {
         yPos = y;
     }
 
-    public void enterRoom(Ship x){
-        System.out.println("You are in the middle of the galaxy!!!");/// I want this to choose randomly from an array im ging to make in the
+    public void enterRoom(Ship x) {
+
+
+            System.out.println("You are in the middle of the galaxy!!!");/// I want this to choose randomly from an array im ging to make in the
+
         apollo13 = x;
         x.setxPos(this.xPos);
         x.setyPos(this.yPos);
